@@ -103,9 +103,11 @@ int fibonacci(int N)
   return sum;
 }
 
+//
+// Couldn't get the testexample.c to work in the make file, so I just added them in here
+//
 
-
-int tests_run = 0;
+ int tests_run = 0;
  
  int factorialNum = 3;
  int fibonacciNum = 4;
@@ -146,9 +148,4 @@ int tests_run = 0;
  
      return result != 0;
  }
- 
-
-  
-
-
 /* stuff.c ends here */

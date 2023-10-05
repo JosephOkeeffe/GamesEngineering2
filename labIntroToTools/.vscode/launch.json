@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/osboxes/LABS/GamesEngineering2/labIntroToTools",
-      "program": "/home/osboxes/LABS/GamesEngineering2/labIntroToTools/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "c:/Users/josep/OneDrive - South East Technological University (Carlow Campus)/YEAR 4/Games Engineering/GamesEngineering2/labIntroToTools",
+      "program": "c:/Users/josep/OneDrive - South East Technological University (Carlow Campus)/YEAR 4/Games Engineering/GamesEngineering2/labIntroToTools/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
