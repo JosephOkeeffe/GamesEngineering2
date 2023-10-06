@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/osboxes/LABS/dlistCode",
-      "program": "/home/osboxes/LABS/dlistCode/build/Debug/outDebug",
+      "cwd": "/home/osboxes/LABS/GamesEngineering2/dlistCode",
+      "program": "/home/osboxes/LABS/GamesEngineering2/dlistCode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
