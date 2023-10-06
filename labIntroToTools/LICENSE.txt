@@ -1,5 +1,3 @@
-
-
 GPLv3 License
 
 Lab 1 - Lab intro to tools. This lab was just to get us started with linux, make and tests

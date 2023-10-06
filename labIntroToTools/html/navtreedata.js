@@ -27,10 +27,12 @@ var NAVTREE =
   [ "Lab 1 - Lab Intro to Tools", "index.html", [
     [ "Lab 1", "md__r_e_a_d_m_e.html", [
       [ "Author", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Git URL", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "MIT License", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "What is the lab?", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "What to do", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
+      [ "Git URL", "md__r_e_a_d_m_e.html#autotoc_md2", [
+        [ "Licensed under GPLv3", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
+      ] ],
+      [ "License", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "What is the lab?", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "What to do", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
