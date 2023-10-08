@@ -1,4 +1,4 @@
-/* DLinkedList.h --- 
+ /* DLinkedList.h --- 
  * 
  * Filename: DLinkedList.h
  * Description: 
@@ -34,22 +34,24 @@
 /* Code: */
 #include <stdbool.h>
 
-        /**
-       * node_t
-       *
-       * Struct representing Node in a doubly linked list
-       */
-struct node_t{
+/**
+* node_t
+*
+* Struct representing Node in a doubly linked list
+*/
+struct node_t
+{
   struct node_t *previous,*next;
   int data;
 };
 
-        /**
-       * DLList
-       *
-       * Struct representing a doubly linked list data type
-       */
-struct DLList_t{
+/**
+* DLList
+*
+* Struct representing a doubly linked list data type
+*/
+struct DLList_t
+{
   struct node_t *first;
   struct node_t *current;
   int size;
@@ -63,77 +65,77 @@ struct DLList_t{
 */
 DLList* createDLList();
 
-      /**
-       * returns the number of items in the list
-       * @param theList a pointer to the DLList struct
-       * @return The number of elements in the DLList
-       */
+/**
+* returns the number of items in the list
+* @param theList a pointer to the  DLList struct
+* @return The number of elements in the DLList
+*/
 int size(DLList *theList);
 
-      /**
-       * Adds an item to the front of the list
-       * @param theList a pointer to the DLList struct
-       * @param newData the data item to be added (an integer).
-       * @return The number of elements in the DLList
-       */
+/**
+* Adds an item to the front of the list
+* @param theList a pointer to the DLList struct
+* @param newData the data item to be added (an integer).
+* @return The number of elements in the DLList
+*/
 int push(DLList * theList, int newData);
 
-      /**
-       * removes an item to the front of the list
-       * @param theList a pointer to the DLList struct
-       * @return The data item - an integer
-       */
+/**
+* removes an item to the front of the list
+* @param theList a pointer to the DLList struct
+* @return The data item - an integer
+*/
 int pop(DLList* theList);
 
-      /**
-       * removes an item to the front of the listreturns the current element of the list
-       * @param theList a pointer to the DLList struct
-       * @return The data at the current position- an integer
-       */
+/**
+* removes an item to the front of the list returns the current element of the list
+* @param theList a pointer to the DLList struct
+* @return The data at the current position- an integer
+*/
 int getCurrent(DLList* theList);
 
-      /**
-       * Moves current to the start of the list
-       * @param theList a pointer to the DLList struct
-       * @return void
-       */
+/**
+* Moves current to the start of the list
+* @param theList a pointer to the DLList struct
+* @return void
+*/
 void first(DLList* theList);
 
-      /**
-       * Moves current to next element of the list
-       * @param theList a pointer to the DLList struct
-       * @return void
-       */
+/**
+* Moves current to next element of the list
+* @param theList a pointer to the DLList struct
+* @return void
+*/
 void next(DLList *theList);
 
-      /**
-       * states whether current is the last element or not
-       * @param theList a pointer to the DLList struct
-       * @return true if current is at end otherwise false
-       */
+/**
+* states whether current is the last element or not
+* @param theList a pointer to the DLList struct
+* @return true if current is at end otherwise false
+*/
 bool atEnd(DLList *theList);
 
-      /**
-       * Deletes the current element
-       * @param theList a pointer to the DLList struct
-       * @return number of elements remaining in list
-       */
+/**
+* Deletes the current element
+* @param theList a pointer to the DLList struct
+* @return number of elements remaining in list
+*/
 int deleteCurrent(DLList* theList);
 
-      /**
-       * Inserts data after the current element
-       * @param theList a pointer to the DLList struct
-       * @param newData the data to be inserted
-       * @return void
-       */
+/**
+* Inserts data after the current element
+* @param theList a pointer to the DLList struct
+* @param newData the data to be inserted
+* @return void
+*/
 void insertAfter(DLList* theList, int newData);
 
-      /**
-       * Inserts data before the current element
-       * @param theList a pointer to the DLList struct
-       * @param newData the data to be inserted
-       * @return void
-       */
+/**
+* Inserts data before the current element
+* @param theList a pointer to the DLList struct
+* @param newData the data to be inserted
+* @return void
+*/
 void insertBefore(DLList* theList, int newData);
 
       /**
