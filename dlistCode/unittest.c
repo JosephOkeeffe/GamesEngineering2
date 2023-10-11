@@ -82,9 +82,12 @@ static char * test_first()
     push(myList, 2);
     push(myList, 3);
     push(myList, 1);
+    int sizeBefore = size(myList);
     first(myList);
 
+
     mu_assert("First does not change the current pointer to the first element in the list", 2 == getCurrent(myList));
+    mu_assert("First changes the size of the list", sizeBefore ==  size(myList));
     free(myList);
     return 0;
 }
@@ -163,17 +166,17 @@ static char * test_insertBefore()
  
 static char * all_tests() 
 {
-    // mu_run_test(test_create());
-    // mu_run_test(test_size());
-    // mu_run_test(test_push());
-    // mu_run_test(test_pop());
-    // mu_run_test(test_getCurrent());
-    // mu_run_test(test_first());
-    // mu_run_test(test_next());
-    // mu_run_test(test_atEnd());
-    // mu_run_test(test_deleteCurrent());
-    // mu_run_test(test_insertAfter());
-    // mu_run_test(test_insertBefore());
+    mu_run_test(test_create);
+    mu_run_test(test_size);
+    mu_run_test(test_push);
+    mu_run_test(test_pop);
+    mu_run_test(test_getCurrent);
+    mu_run_test(test_first);
+    mu_run_test(test_next);
+    mu_run_test(test_atEnd);
+    mu_run_test(test_deleteCurrent);
+    mu_run_test(test_insertAfter);
+    mu_run_test(test_insertBefore);
 
     return 0;
 }

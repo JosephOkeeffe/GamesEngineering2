@@ -65,7 +65,7 @@ int push(DLList * theList, int newData)
 
   if (newNode == 0)
   {
-    return 0;
+    return -1;
   }
 
   // If the size is 0, initialise the data to the first
@@ -96,42 +96,200 @@ int push(DLList * theList, int newData)
     theList->size++; // increasing the size
 
 }
+
 int pop(DLList* theList)
 {
+    if (theList->size == 0 || theList->first == 0) 
+    {
+        return -1;
+    }
+    
+    // Current points to the last node.
+    struct node_t* lastNode = theList->current; 
 
+    if (lastNode->previous != 0) 
+    {
+        // Update the previous node's 'next' pointer to 0.
+        lastNode->previous->next = 0;
+    } 
+    else 
+    {
+        // If there's no previous node, it means we're popping the first node.
+        // So, update the 'first' pointer.
+        theList->first = 0;
+    }
+
+    theList->current = lastNode->previous; // Move current to the new last node.
+    int data = lastNode->data;
+    free(lastNode); // Free the memory of the popped node.
+    theList->size--;
+
+    return data; // Return the data from the popped node.
 }
+
 int getCurrent(DLList* theList)
 {
-  
+  // check if theres nothing in the list then return -1
+    if (theList->size == 0 || theList->first == 0){return -1;}
+    int data = theList->first->data;
+    return data;
 }
 void first(DLList* theList)
 {
-  
+  // check if theres nothing in the list then return -1
+   if (theList->size == 0 || theList->first == 0){return;}
+
+// make a temp node to store the first
+  struct node_t* tempFirstNode = theList->first; 
+  // make the current node the first
+  theList->first = theList->current;
+  //
+  theList->current = tempFirstNode;
 }
 void next(DLList *theList)
 {
-  
+  if (theList->current != 0) 
+  {
+      theList->current = theList->current->next;
+  }
 }
 bool atEnd(DLList *theList)
 {
-  
+  bool isAtEnd = true;
+  if (theList->current == 0) 
+  {
+        // If current is NULL, it means the list is empty or there's no current element.
+        isAtEnd = false;
+  }
+
+// if the next is null, make it true
+  if(theList->current->next == 0)
+  {
+    isAtEnd = true;
+  }
+  else
+  {
+    isAtEnd = false;
+  }
+
+  return isAtEnd;
+
 }
 int deleteCurrent(DLList* theList)
 {
-  
+    if (theList->size == 0 || theList->current == 0){return -1;}
+
+    struct node_t* current = theList->current;
+
+    if (current->previous != 0) 
+    {
+        // if its not at the start, 
+        current->previous->next = current->next;
+    }
+    else 
+    {
+        // If the current element is at the beginning, update the 'first' pointer.
+        theList->first = current->next;
+    }
+
+    if (current->next != 0) 
+    {
+      // if the next isnt null, update its previous
+        current->next->previous = current->previous;
+    } 
+
+ // Move the current pointer.
+    theList->current = current->next;
+
+    free(current); 
+    theList->size--;
+  // Return the number of elements remaining in the list.
+    return theList->size; 
 }
+
 void insertAfter(DLList* theList, int newData)
 {
-  
+   // Create a new node with the given data.
+    struct node_t* newNode = (struct node_t*)malloc(sizeof(struct node_t));
+    if (newNode == 0) 
+    {
+        return;
+    }
+    newNode->data = newData;
+
+    if (theList->size == 0 || theList->current == 0)
+     {
+        // If the list is empty or there's no current element, insert the new node as the first element.
+        newNode->next = theList->first;
+        newNode->previous = 0;
+        theList->first = newNode;
+    }
+    else 
+    {
+        // Update pointers to insert the new node after the current element.
+        newNode->next = theList->current->next;
+        newNode->previous = theList->current;
+        theList->current->next = newNode;
+        if (newNode->next != 0) 
+        {
+            newNode->next->previous = newNode;
+        }
+    }
+
+    // Update the current pointer to point to the newly inserted node.
+    theList->current = newNode;
+    theList->size++;
 }
 void insertBefore(DLList* theList, int newData)
 {
+// Create a new node with the given data.
+    struct node_t* newNode = (struct node_t*)malloc(sizeof(struct node_t));
 
+    if (newNode == 0) 
+    {
+        return;
+    }
+    newNode->data = newData;
+
+    if (theList->size == 0 || theList->current == 0) 
+    {
+        // If the list is empty or there's no current element, insert the new node as the first element.
+        newNode->next = theList->first;
+        newNode->previous = 0;
+        theList->first = newNode;
+        theList->current = newNode;
+    } 
+    else 
+    {
+        // Update pointers to insert the new node before the current element.
+        newNode->previous = theList->current->previous;
+        newNode->next = theList->current;
+        theList->current->previous = newNode;
+        if (newNode->previous != 0) 
+        {
+            newNode->previous->next = newNode;
+        } 
+        else 
+        {
+            // If the current element is at the beginning, update the 'first' pointer.
+            theList->first = newNode;
+        }
+    }
+
+    theList->size++;
 }
 
 void printList(DLList* theList)
 {
-  
+   struct node_t* current = theList->first;
+
+    while (current != 0) 
+    {
+        printf("%d ", current->data);
+        current = current->next;
+    }
+    
+    printf("\n");
 }
 
 /* listmain.c ends here */
