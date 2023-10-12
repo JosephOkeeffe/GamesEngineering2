@@ -23,11 +23,11 @@
 # Git URL - https://github.com/JosephOkeeffe/GamesEngineering2
 
 # Making a variable for all the C FIles in the project
-CFILES=stuff.c 
+CFILES=listmain.c unittest.c
 # Making a variable for all the object files in the project
-OBJFILES=stuff.o
+OBJFILES=listmain.o unittest.o
 # Making a variable for all the H files in the project
-HFILES=minunit.h
+HFILES=minunit.h DLinkedList.h
 # Making a variable for the compilers in the project
 CC= gcc
 # Making a variable for  the executable in the project

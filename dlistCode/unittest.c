@@ -106,7 +106,7 @@ static char * test_next()
     push(myList, 3);
     next(myList);
 
-    mu_assert("Next in a list with one element should not work but its giving some value", NULL == getCurrent(myList));
+    mu_assert("Next in a list with one element should not work but its giving some value", 0  == getCurrent(myList));
     free(myList);
     return 0; 
 }
@@ -158,7 +158,7 @@ static char * test_insertBefore()
     push(myList, 3);
     insertBefore(myList, 1);
 
-    mu_assert("Insert Before did not insert before the current element ", 1 == getCurrent(myList->current->previous));
+    mu_assert("Insert Before did not insert before the current element ", 1 == getCurrent(myList));
     free(myList);
     return 0; 
 }

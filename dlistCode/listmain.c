@@ -34,11 +34,16 @@
 
 /* Code: */
 #include "DLinkedList.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-int main(void)
+DLList* createDLList()
 {
-  DLList* myList;
-  return 0;
+  DLList* list = (DLList*)malloc(sizeof(DLList));
+  list->first = 0;
+  list ->current = 0;
+  list->size = 0;
+  return list;
 }
 
 int size(DLList *theList)
@@ -87,13 +92,13 @@ int push(DLList * theList, int newData)
   // if its 1, set the firsts next to the new node
   if(theList->size == 1)
   {
-     theList->first->next = newNode->data;
+     theList->first->next = newNode;
   }
 
     theList->current = newNode; // setting the current list to the new node
     // This includes previous, next and data (i think thats how it works)
 
-    theList->size++; // increasing the size
+    return theList->size++; // increasing the size
 
 }
 
@@ -156,14 +161,14 @@ void next(DLList *theList)
 bool atEnd(DLList *theList)
 {
   bool isAtEnd = true;
-  if (theList->current == 0) 
+  if (theList->current == NULL) 
   {
         // If current is NULL, it means the list is empty or there's no current element.
         isAtEnd = false;
   }
 
 // if the next is null, make it true
-  if(theList->current->next == 0)
+  if(theList->current->next == NULL)
   {
     isAtEnd = true;
   }
