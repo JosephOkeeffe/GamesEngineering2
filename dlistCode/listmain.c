@@ -160,23 +160,14 @@ int getCurrent(DLList* theList)
 }
 void first(DLList* theList)
 {
-  // check if theres nothing in the list then return -1
-   if (theList->size == 0 || theList->first == 0){return;}
-
-// make a temp node to store the first
-  struct node_t* tempFirstNode = theList->first; 
-  // make the current node the first
-  theList->first = theList->current;
-  //
-  theList->current = tempFirstNode;
+  theList->current = theList->first;
 }
 
 void next(DLList *theList)
 {
-  if (theList->current != 0) 
-  {
-      theList->current = theList->current->next;
-  }
+
+    theList->current = theList->current->next;
+  
 }
 
 bool atEnd(DLList *theList)
@@ -191,36 +182,33 @@ bool atEnd(DLList *theList)
   }
 }
 
-int deleteCurrent(DLList* theList)
+int deleteCurrent(DLList* theList) 
 {
-    if (theList->size == 0 || theList->current == 0){return -1;}
-
-    struct node_t* current = theList->current;
-
-    if (current->previous != 0) 
+    if (theList->current == NULL)
     {
-        // if its not at the start, 
-        current->previous->next = current->next;
+        return theList->size;
+    }
+
+    if (theList->current->previous != NULL) 
+    {
+        theList->current->previous->next = theList->current->next;
     }
     else 
     {
-        // If the current element is at the beginning, update the 'first' pointer.
-        theList->first = current->next;
+        theList->first = theList->current->next;
     }
 
-    if (current->next != 0) 
+    if (theList->current->next != NULL) 
     {
-      // if the next isnt null, update its previous
-        current->next->previous = current->previous;
-    } 
+        theList->current->next->previous = theList->current->previous;
+    }
 
- // Move the current pointer.
-    theList->current = current->next;
-
-    free(current); 
+    struct node_t* temp = theList->current;
+    theList->current = theList->current->next;
+    free(temp);
     theList->size--;
-  // Return the number of elements remaining in the list.
-    return theList->size; 
+
+    return theList->size;
 }
 
 void insertAfter(DLList* theList, int newData)
