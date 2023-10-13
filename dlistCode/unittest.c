@@ -12,8 +12,8 @@ int tests_run = 0;
  {
     DLList * myList = createDLList();
 
-    mu_assert("Size not initialised properly", 0 == size(myList));
-    mu_assert("Pointers not initialised to NULL on creation", true == atEnd(myList));
+    mu_assert("Size not initialised properly in test_Create()", 0 == size(myList));
+    mu_assert("Pointers is initialised to NULL on creation in test_Create()", !atEnd(myList));
     free(myList);
     return 0;
  }
