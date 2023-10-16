@@ -76,37 +76,29 @@ static char * test_getCurrent()
     return 0;
 }
 
-static char * test_first() 
+static char* test_first() 
 {
-    DLList * myList = createDLList();
-    push(myList, 1);
-    push(myList, 2);
-    //int sizeBefore = size(myList);
-    first(myList);
-
-   // mu_assert("First does not change the current pointer to the first element in the list (test_first)", 1 == getCurrent(myList));
-   // mu_assert("First changes the size of the list (test_first)", sizeBefore ==  size(myList));
-    free(myList);
-    return 0;
+  DLList* list = createDLList();
+  mu_assert("error, DLList is not initialized test_First", 0 == size(list));
+  push(list, 1);
+  push(list, 2);
+  first(list);
+  mu_assert("error, current not equal to first test_first", 2 == getCurrent(list));
+  return 0;
 }
-static char * test_next() 
+static char* test_next() 
 {
-    DLList * myList = createDLList();
-    push(myList, 5);
-    push(myList, 6);
-    push(myList, 7);
-    first(myList);
-    next(myList);
+    DLList* list = createDLList();
+    push(list, 5);
+    push(list, 6);
+    push(list, 7);
 
-    mu_assert("Next does not change the current pointer to the next element in the list", 6 == getCurrent(myList));
-    free(myList);
+    first(list); 
 
-    push(myList, 3);
-    next(myList);
+    next(list); 
+    mu_assert(" current should be 6 in test_next()", 6 == getCurrent(list));
 
-    mu_assert("Next in a list with one element should not work but its giving some value", 0  == getCurrent(myList));
-    free(myList);
-    return 0; 
+    return 0;
 }
 
 static char * test_atEnd() 

@@ -158,16 +158,17 @@ int getCurrent(DLList* theList)
     int data = theList->first->data;
     return data;
 }
-void first(DLList* theList)
+void first(DLList* theList) 
 {
-  theList->current = theList->first;
+    theList->current = theList->first;
 }
 
-void next(DLList *theList)
+void next(DLList *theList) 
 {
-
-    theList->current = theList->current->next;
-  
+    if (theList->current != NULL)
+    {
+        theList->current = theList->current->next;
+    }
 }
 
 bool atEnd(DLList *theList)
