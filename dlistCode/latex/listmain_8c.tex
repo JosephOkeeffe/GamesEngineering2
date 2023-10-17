@@ -1,0 +1,204 @@
+\doxysection{listmain.\+c File Reference}
+\hypertarget{listmain_8c}{}\label{listmain_8c}\index{listmain.c@{listmain.c}}
+{\ttfamily \#include "{}DLinked\+List.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{listmain_8c_a962619a93e9e57545a97f630d01182fb}{create\+DLList}} ()
+\item 
+int \mbox{\hyperlink{listmain_8c_afb7338bdf88baa664e735ecee02855b9}{size}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+int \mbox{\hyperlink{listmain_8c_a65d27159c330ec669222dfbf42aa789c}{push}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List, int new\+Data)
+\item 
+int \mbox{\hyperlink{listmain_8c_a8149a1e0277c15bb531f0c1a39d98807}{pop}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+int \mbox{\hyperlink{listmain_8c_af77b24068743456daacf6b52cca68650}{get\+Current}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+void \mbox{\hyperlink{listmain_8c_a6c875a95502f04c78742f93ccc8ca89a}{first}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+void \mbox{\hyperlink{listmain_8c_a5dde8a86a52a410677c98a1654fffc53}{next}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+bool \mbox{\hyperlink{listmain_8c_a24f5f72b5b212be3d011b35e5bc72e0b}{at\+End}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+int \mbox{\hyperlink{listmain_8c_a5193538fcf1d18977029d7a4cde492d6}{delete\+Current}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\item 
+void \mbox{\hyperlink{listmain_8c_a7fc0f55dd8671ec055076c9b97b01471}{insert\+After}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List, int new\+Data)
+\item 
+void \mbox{\hyperlink{listmain_8c_ad50343513e67bcac102c4b19bbb177be}{insert\+Before}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List, int new\+Data)
+\item 
+void \mbox{\hyperlink{listmain_8c_a1f1256059dad7c5f25292ae739fa9906}{print\+List}} (\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}the\+List)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{listmain_8c_a24f5f72b5b212be3d011b35e5bc72e0b}\label{listmain_8c_a24f5f72b5b212be3d011b35e5bc72e0b} 
+\index{listmain.c@{listmain.c}!atEnd@{atEnd}}
+\index{atEnd@{atEnd}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{atEnd()}{atEnd()}}
+{\footnotesize\ttfamily bool at\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+states whether current is the last element or not 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if current is at end otherwise false 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a962619a93e9e57545a97f630d01182fb}\label{listmain_8c_a962619a93e9e57545a97f630d01182fb} 
+\index{listmain.c@{listmain.c}!createDLList@{createDLList}}
+\index{createDLList@{createDLList}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{createDLList()}{createDLList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*} create\+DLList (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+List constructor. \begin{DoxyReturn}{Returns}
+Pointer to the new list 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a5193538fcf1d18977029d7a4cde492d6}\label{listmain_8c_a5193538fcf1d18977029d7a4cde492d6} 
+\index{listmain.c@{listmain.c}!deleteCurrent@{deleteCurrent}}
+\index{deleteCurrent@{deleteCurrent}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{deleteCurrent()}{deleteCurrent()}}
+{\footnotesize\ttfamily int delete\+Current (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+Deletes the current element 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of elements remaining in list 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a6c875a95502f04c78742f93ccc8ca89a}\label{listmain_8c_a6c875a95502f04c78742f93ccc8ca89a} 
+\index{listmain.c@{listmain.c}!first@{first}}
+\index{first@{first}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily void first (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+Moves current to the start of the list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_af77b24068743456daacf6b52cca68650}\label{listmain_8c_af77b24068743456daacf6b52cca68650} 
+\index{listmain.c@{listmain.c}!getCurrent@{getCurrent}}
+\index{getCurrent@{getCurrent}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{getCurrent()}{getCurrent()}}
+{\footnotesize\ttfamily int get\+Current (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+removes an item to the front of the list returns the current element of the list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The data at the current position-\/ an integer 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a7fc0f55dd8671ec055076c9b97b01471}\label{listmain_8c_a7fc0f55dd8671ec055076c9b97b01471} 
+\index{listmain.c@{listmain.c}!insertAfter@{insertAfter}}
+\index{insertAfter@{insertAfter}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{insertAfter()}{insertAfter()}}
+{\footnotesize\ttfamily void insert\+After (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List,  }\item[{int}]{new\+Data }\end{DoxyParamCaption})}
+
+Inserts data after the current element 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+{\em new\+Data} & the data to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_ad50343513e67bcac102c4b19bbb177be}\label{listmain_8c_ad50343513e67bcac102c4b19bbb177be} 
+\index{listmain.c@{listmain.c}!insertBefore@{insertBefore}}
+\index{insertBefore@{insertBefore}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{insertBefore()}{insertBefore()}}
+{\footnotesize\ttfamily void insert\+Before (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List,  }\item[{int}]{new\+Data }\end{DoxyParamCaption})}
+
+Inserts data before the current element 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+{\em new\+Data} & the data to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a5dde8a86a52a410677c98a1654fffc53}\label{listmain_8c_a5dde8a86a52a410677c98a1654fffc53} 
+\index{listmain.c@{listmain.c}!next@{next}}
+\index{next@{next}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily void next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+Moves current to next element of the list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a8149a1e0277c15bb531f0c1a39d98807}\label{listmain_8c_a8149a1e0277c15bb531f0c1a39d98807} 
+\index{listmain.c@{listmain.c}!pop@{pop}}
+\index{pop@{pop}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily int pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+removes an item to the front of the list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The data item -\/ an integer 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a1f1256059dad7c5f25292ae739fa9906}\label{listmain_8c_a1f1256059dad7c5f25292ae739fa9906} 
+\index{listmain.c@{listmain.c}!printList@{printList}}
+\index{printList@{printList}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{printList()}{printList()}}
+{\footnotesize\ttfamily void print\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+Prints the entire list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_a65d27159c330ec669222dfbf42aa789c}\label{listmain_8c_a65d27159c330ec669222dfbf42aa789c} 
+\index{listmain.c@{listmain.c}!push@{push}}
+\index{push@{push}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily int push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List,  }\item[{int}]{new\+Data }\end{DoxyParamCaption})}
+
+Adds an item to the front of the list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+{\em new\+Data} & the data item to be added (an integer). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements in the DLList 
+\end{DoxyReturn}
+\Hypertarget{listmain_8c_afb7338bdf88baa664e735ecee02855b9}\label{listmain_8c_afb7338bdf88baa664e735ecee02855b9} 
+\index{listmain.c@{listmain.c}!size@{size}}
+\index{size@{size}!listmain.c@{listmain.c}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}} \texorpdfstring{$\ast$}{*}}]{the\+List }\end{DoxyParamCaption})}
+
+returns the number of items in the list 
+\begin{DoxyParams}{Parameters}
+{\em the\+List} & a pointer to the DLList struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements in the DLList 
+\end{DoxyReturn}

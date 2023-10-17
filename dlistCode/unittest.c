@@ -4,10 +4,7 @@
 #include "DLinkedList.h"
 
 int tests_run = 0;
- 
- int factorialNum = 3;
- int fibonacciNum = 4;
- 
+
  static char * test_create() 
  {
     DLList * myList = createDLList();

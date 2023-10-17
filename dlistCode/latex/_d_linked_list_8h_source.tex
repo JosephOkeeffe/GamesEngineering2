@@ -1,0 +1,82 @@
+\doxysection{DLinked\+List.\+h}
+\hypertarget{_d_linked_list_8h_source}{}\label{_d_linked_list_8h_source}\mbox{\hyperlink{_d_linked_list_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \ \textcolor{comment}{/*\ DLinkedList.h\ -\/-\/-\/\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Filename:\ DLinkedList.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Description:\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Author:\ Joseph}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Maintainer:\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Created:\ Wed\ Oct\ \ 4\ 18:44:47\ 2023\ (+0100)}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ Last-\/Updated:\ Wed\ Oct\ \ 4\ 20:39:12\ 2023\ (+0100)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ By:\ Joseph}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ \ Update\ \#:\ 7}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Commentary:\ }}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or\ (at}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the\ GNU}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ along\ with\ GNU\ Emacs.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*\ Code:\ */}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode__t}{node\_t}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode__t}{node\_t}}\ *\mbox{\hyperlink{structnode__t_a8423f901242d58b8005eaa69128fe5d9}{previous}},*\mbox{\hyperlink{structnode__t_ae334a02d0992c8864e530fcf42b53b4a}{next}};}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structnode__t_a9eab91667db4d35c7231dcddf7b89a76}{data}};}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_d_l_list__t}{DLList\_t}}}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode__t}{node\_t}}\ *\mbox{\hyperlink{struct_d_l_list__t_a8bbc59a27361ded064df7618d07f2d0e}{first}};}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode__t}{node\_t}}\ *\mbox{\hyperlink{struct_d_l_list__t_a8f1154ccd72c4d72b5eabd931b83f188}{current}};}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_l_list__t_a439227feff9d7f55384e8780cfc2eb82}{size}};}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ DLList\ struct\ DLList\_t}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ \mbox{\hyperlink{_d_linked_list_8h_a962619a93e9e57545a97f630d01182fb}{createDLList}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_d_linked_list_8h_afb7338bdf88baa664e735ecee02855b9}{size}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}\ *theList);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_d_linked_list_8h_a65d27159c330ec669222dfbf42aa789c}{push}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}\ *\ theList,\ \textcolor{keywordtype}{int}\ newData);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_d_linked_list_8h_a8149a1e0277c15bb531f0c1a39d98807}{pop}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_d_linked_list_8h_af77b24068743456daacf6b52cca68650}{getCurrent}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_d_linked_list_8h_a6c875a95502f04c78742f93ccc8ca89a}{first}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_d_linked_list_8h_a5dde8a86a52a410677c98a1654fffc53}{next}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}\ *theList);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_d_linked_list_8h_a24f5f72b5b212be3d011b35e5bc72e0b}{atEnd}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}\ *theList);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_d_linked_list_8h_a5193538fcf1d18977029d7a4cde492d6}{deleteCurrent}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_d_linked_list_8h_a7fc0f55dd8671ec055076c9b97b01471}{insertAfter}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList,\ \textcolor{keywordtype}{int}\ newData);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_d_linked_list_8h_ad50343513e67bcac102c4b19bbb177be}{insertBefore}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList,\ \textcolor{keywordtype}{int}\ newData);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_d_linked_list_8h_a1f1256059dad7c5f25292ae739fa9906}{printList}}(\mbox{\hyperlink{_d_linked_list_8h_a98606062334ae68e7329990b0a12493f}{DLList}}*\ theList);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ }
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ DLinkedList.h\ ends\ here\ */}}
+
+\end{DoxyCode}
