@@ -123,29 +123,19 @@ int push(DLList * theList, int newData)
 
 int pop(DLList* theList)
 {
-    if (theList->size == 0 || theList->first == 0) 
+    if (theList->size == 0) 
     {
         return -1;
     }
     
     // Current points to the last node.
-    struct node_t* lastNode = theList->current; 
+    struct node_t* firstNode = theList->first; 
 
-    if (lastNode->previous != 0) 
-    {
-        // Update the previous node's 'next' pointer to 0.
-        lastNode->previous->next = 0;
-    } 
-    else 
-    {
-        // If there's no previous node, it means we're popping the first node.
-        // So, update the 'first' pointer.
-        theList->first = 0;
-    }
-
-    theList->current = lastNode->previous; // Move current to the new last node.
-    int data = lastNode->data;
-    free(lastNode); // Free the memory of the popped node.
+    theList->first = theList->first->next;
+    theList->current = theList->first;
+    
+    int data = firstNode->data;
+    free(firstNode); // Free the memory of the popped node.
     theList->size--;
 
     return data; // Return the data from the popped node.
@@ -154,8 +144,8 @@ int pop(DLList* theList)
 int getCurrent(DLList* theList)
 {
   // check if theres nothing in the list then return -1
-    if (theList->size == 0 || theList->first == 0){return -1;}
-    int data = theList->first->data;
+    if (theList->size == 0){return -1;}
+    int data = theList->current->data;
     return data;
 }
 void first(DLList* theList) 
@@ -165,7 +155,7 @@ void first(DLList* theList)
 
 void next(DLList *theList) 
 {
-    if (theList->current != NULL)
+    if (theList->current->next != NULL)
     {
         theList->current = theList->current->next;
     }
@@ -260,17 +250,20 @@ void insertBefore(DLList* theList, int newData)
     if (theList->size == 0 || theList->current == 0) 
     {
         // If the list is empty or there's no current element, insert the new node as the first element.
-        newNode->next = theList->first;
+        newNode->next = 0;
         newNode->previous = 0;
         theList->first = newNode;
         theList->current = newNode;
     } 
     else 
     {
-        // Update pointers to insert the new node before the current element.
-        newNode->previous = theList->current->previous;
-        newNode->next = theList->current;
+        // 1 - 2 - 3
+        // 2 is current
+        // 1 - new - 2 - 3
+        newNode->previous = theList->current->previous; 
         theList->current->previous = newNode;
+        newNode->next = theList->current;
+
         if (newNode->previous != 0) 
         {
             newNode->previous->next = newNode;

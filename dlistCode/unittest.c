@@ -148,7 +148,8 @@ static char * test_insertBefore()
     push(myList, 3);
     insertBefore(myList, 1);
 
-    mu_assert("Insert Before did not insert before the current element ", 1 == getCurrent(myList));
+    mu_assert("Insert Before did not insert before the current element ", 3 == getCurrent(myList));
+    mu_assert("Insert Before did not increase list size", 2 == size(myList));
     free(myList);
     return 0; 
 }
