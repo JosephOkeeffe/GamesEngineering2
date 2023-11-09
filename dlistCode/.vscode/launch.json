@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/osboxes/Desktop/LABS/GamesEngineering2/dlistCode",
-      "program": "/home/osboxes/Desktop/LABS/GamesEngineering2/dlistCode/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "c:/Users/josep/OneDrive - South East Technological University (Carlow Campus)/YEAR 4/Games Engineering/GamesEngineering2/dlistCode",
+      "program": "c:/Users/josep/OneDrive - South East Technological University (Carlow Campus)/YEAR 4/Games Engineering/GamesEngineering2/dlistCode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

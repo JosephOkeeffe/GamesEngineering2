@@ -37,6 +37,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*******************************************************************************
+ * @param N Creating a DLList
+ * @return returns the list               
+ ******************************************************************************/
 DLList* createDLList()
 {
   DLList* list = (DLList*)malloc(sizeof(DLList));
@@ -46,6 +50,10 @@ DLList* createDLList()
   return list;
 }
 
+/*******************************************************************************
+ * @param N Creating a function that checks the size of the list
+ * @return returns the size of the list             
+ ******************************************************************************/
 int size(DLList *theList)
 {
   int size = theList->size;
@@ -53,55 +61,10 @@ int size(DLList *theList)
   return size;
 }
 
-//
-// int push(DLList * theList, int newData)
-// {
-//   struct node_t *newNode = (struct node_t *)malloc(sizeof(struct node_t));
-
-// // Make a new node that stores the data
-// // If you are pushing into an empty list, store the data into the *first node
-// // If there is only one element in the list, set the first->next to the current node
-// // Store new data in the new node
-// // Update the list's previous
-// // New list
-// // null <- 1 -> null - size = 1
-// // 1 <- 3 -> null - size = 2
-// // 3 <- 5 -> null - size = 3
-
-//   if (newNode == 0)
-//   {
-//     return -1;
-//   }
-
-//   // If the size is 0, initialise the data to the first
-//   if(theList->first == 0)
-//   {
-//     // setting both first and current to the same values
-//     theList->first->data = newData;
-//     theList->first->previous = 0;
-//     theList->first->next = 0;
-//   }
-
-//       // null <- 3 -> null
-//     newNode->data = newData;
-//       //1 <- 3 -> 
-//     newNode->previous = theList->current;
-//       //1 <- 3 -> null
-//     newNode->next = 0;
-
-//   // if its 1, set the firsts next to the new node
-//   if(theList->size == 1)
-//   {
-//      theList->first->next = newNode;
-//   }
-
-//     theList->current = newNode; // setting the current list to the new node
-//     // This includes previous, next and data (i think thats how it works)
-
-//       theList->size++; // increasing the size
-//     return theList->size;
-
-// }
+/*******************************************************************************
+ * @param N Creating a function that pushes a new item to the front of the list
+ * @return returns the size of the list               
+ ******************************************************************************/
 int push(DLList * theList, int newData) 
 {
     struct node_t* newNode = (struct node_t*) malloc(sizeof(struct node_t));
@@ -121,6 +84,10 @@ int push(DLList * theList, int newData)
     return theList->size;
 }
 
+/*******************************************************************************
+ * @param N Creating a function that removes the first item in the list
+ * @return returns the data of the list               
+ ******************************************************************************/
 int pop(DLList* theList)
 {
     if (theList->size == 0) 
@@ -141,6 +108,10 @@ int pop(DLList* theList)
     return data; // Return the data from the popped node.
 }
 
+/*******************************************************************************
+ * @param N Creating a function that returns the current item in the list
+ * @return returns the data from the list             
+ ******************************************************************************/
 int getCurrent(DLList* theList)
 {
   // check if theres nothing in the list then return -1
@@ -148,11 +119,19 @@ int getCurrent(DLList* theList)
     int data = theList->current->data;
     return data;
 }
+/*******************************************************************************
+ * @param N Creating a function that changes the current to the first item in the list
+ * @return returns nothing              
+ ******************************************************************************/
 void first(DLList* theList) 
 {
     theList->current = theList->first;
 }
 
+/*******************************************************************************
+ * @param N Creating a function that changes the current to the next item in the list
+ * @return returns nothing              
+ ******************************************************************************/
 void next(DLList *theList) 
 {
     if (theList->current->next != NULL)
@@ -161,6 +140,10 @@ void next(DLList *theList)
     }
 }
 
+/*******************************************************************************
+ * @param N Creating a function that checks to see if you are at the end of the list
+ * @return returns true or false              
+ ******************************************************************************/
 bool atEnd(DLList *theList)
 {
   if(theList->current != NULL)
@@ -173,6 +156,10 @@ bool atEnd(DLList *theList)
   }
 }
 
+/*******************************************************************************
+ * @param N Creating a function that deletes the current item in the list
+ * @return returns size of the list              
+ ******************************************************************************/
 int deleteCurrent(DLList* theList) 
 {
     if (theList->current == NULL)
@@ -202,6 +189,10 @@ int deleteCurrent(DLList* theList)
     return theList->size;
 }
 
+/*******************************************************************************
+ * @param N Creating a function that inserts an item after the current item in the list
+ * @return returns nothing             
+ ******************************************************************************/
 void insertAfter(DLList* theList, int newData)
 {
    // Create a new node with the given data.
@@ -236,6 +227,10 @@ void insertAfter(DLList* theList, int newData)
     theList->size++;
 }
 
+/*******************************************************************************
+ * @param N Creating a function that inserts an item before the current item in the list
+ * @return returns nothing             
+ ******************************************************************************/
 void insertBefore(DLList* theList, int newData)
 {
 // Create a new node with the given data.
@@ -278,6 +273,10 @@ void insertBefore(DLList* theList, int newData)
     theList->size++;
 }
 
+/*******************************************************************************
+ * @param N Creating a function that displays all the items in the list
+ * @return returns nothing             
+ ******************************************************************************/
 void printList(DLList* theList)
 {
    struct node_t* current = theList->first;

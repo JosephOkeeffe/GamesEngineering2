@@ -31,5 +31,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## What is the lab?
 1. Getting us to do test first programming
+2. Making functioins for D Linked lists
 
 
